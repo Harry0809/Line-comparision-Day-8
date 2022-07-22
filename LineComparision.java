@@ -6,8 +6,12 @@ public class LineComparision {
 
 	public static void main(String[] args) {
 
-		System.out.println("Welcome to Line Comparison Computation using oops concept ");
+		System.out.println("Welcome to Line Comparison Computation ");
 		Scanner sc = new Scanner(System.in);
+		LineComparision obj = new LineComparision();
+		LineComparision obj1 = new LineComparision();
+		Double result1, result2;
+		System.out.println("Line 1 points");
 		System.out.println("Enter the point for x1 :");
 		double x1 = sc.nextDouble();
 		System.out.println("Enter the point for y1 :");
@@ -16,8 +20,32 @@ public class LineComparision {
 		double x2 = sc.nextDouble();
 		System.out.println("Enter the point for y2 :");
 		double y2 = sc.nextDouble();
-		LineComparision obj = new LineComparision();
-		obj.Calculate_length(x1, y1, x2, y2);
+
+		result1 = obj.Calculate_length(x1, y1, x2, y2);
+		System.out.println("calculated length for 1st Line :" + result1);
+		// line 2
+		System.out.println("Line 2 points");
+		System.out.println("Enter the point for x1 :");
+		double a1 = sc.nextDouble();
+		System.out.println("Enter the point for y1 :");
+		double b1 = sc.nextDouble();
+		System.out.println("Enter the point for x2 :");
+		double a2 = sc.nextDouble();
+		System.out.println("Enter the point for y2 :");
+		double b2 = sc.nextDouble();
+
+		result2 = obj.Calculate_length(a1, b1, a2, b2);
+		System.out.println("calculated length for 2nd Line :" + result2);
+
+		if (result1.equals(result2)) {
+
+			System.out.println("Lines are equal");
+
+		} else {
+
+			System.out.println("Lines are not equal");
+		}
+
 	}
 
 	public double Calculate_length(double x1, double y1, double x2, double y2) {
@@ -27,4 +55,3 @@ public class LineComparision {
 		return len;
 	}
 }
-
